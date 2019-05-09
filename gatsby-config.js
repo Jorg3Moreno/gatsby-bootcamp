@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Wirepunk',
+    title: 'ShellPunk',
     author: 'Jorge Moreno',
   },
   plugins: [

@@ -4,6 +4,7 @@ const path = require('path');
 // internal type is MarkdownRemark
 module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
+
   if (node.internal.type === 'MarkdownRemark') {
     const slug = path.basename(node.fileAbsolutePath, '.md');
     createNodeField({
@@ -16,11 +17,12 @@ module.exports.onCreateNode = ({ node, actions }) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  // get path to template
+
+  // get path to template component
   const postTemplate = path.resolve('./src/templates/post.js');
 
-  // get markdown data
-  const response = await graphql(`
+  // get markdown data (filename)
+  const res = await graphql(`
     {
       allMarkdownRemark {
         edges {
@@ -35,7 +37,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   `);
 
   // create the new page
-  response.data.allMarkdownRemark.edges.map(edge => {
+  res.data.allMarkdownRemark.edges.map(edge => {
     createPage({
       component: postTemplate,
       path: `/blog/${edge.node.fields.slug}`,
