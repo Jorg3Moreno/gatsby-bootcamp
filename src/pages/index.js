@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout headPageTitle="Home">
       <h1>HELLO!</h1>
       <h2>I'm Jorge Moreno. I'm fullstack developer</h2>
       <p>

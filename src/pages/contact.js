@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 
 const ContactPage = () => {
   return (
-    <Layout>
+    <Layout headPageTitle="Contact">
       <h1>Contact</h1>
       <p>
         Twitter:{' '}

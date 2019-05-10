@@ -25,7 +25,7 @@ const BlogPage = () => {
   `);
 
   return (
-    <Layout>
+    <Layout headPageTitle="Blog">
       <h1>Blog</h1>
       <h2>Posts will show up here later on.</h2>
       <ol className={blogStyles.posts}>

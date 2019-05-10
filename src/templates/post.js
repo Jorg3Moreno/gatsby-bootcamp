@@ -17,7 +17,7 @@ export const query = graphql`
 
 const Post = props => {
   return (
-    <Layout>
+    <Layout headPageTitle={props.data.markdownRemark.frontmatter.title}>
       <h1>{props.data.markdownRemark.frontmatter.title}</h1>
       <p>{props.data.markdownRemark.frontmatter.date}</p>
       <div
